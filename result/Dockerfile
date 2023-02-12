@@ -1,11 +1,11 @@
-FROM node:lts-alpine3.17
+FROM node:12-alpine
 
 WORKDIR /app/result
 
-COPY . .
+COPY --chown=node:node . .
 
 RUN npm install
 
 EXPOSE 80
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
